@@ -1,0 +1,3 @@
+C:/Users/gabys/OneDrive/Desktop/Programacion/Gabinator_Desktop/build/CMakeFiles/Gabinator_Desktop.dir
+C:/Users/gabys/OneDrive/Desktop/Programacion/Gabinator_Desktop/build/CMakeFiles/ALL_BUILD.dir
+C:/Users/gabys/OneDrive/Desktop/Programacion/Gabinator_Desktop/build/CMakeFiles/ZERO_CHECK.dir

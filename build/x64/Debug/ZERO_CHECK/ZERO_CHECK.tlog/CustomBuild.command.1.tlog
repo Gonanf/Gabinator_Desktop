@@ -1,0 +1,10 @@
+^C:\USERS\GABYS\ONEDRIVE\DESKTOP\PROGRAMACION\GABINATOR_DESKTOP\BUILD\CMAKEFILES\DBB8323667142D09D1BBACF6B51F5BDA\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/gabys/OneDrive/Desktop/Programacion/Gabinator_Desktop -BC:/Users/gabys/OneDrive/Desktop/Programacion/Gabinator_Desktop/build --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file C:/Users/gabys/OneDrive/Desktop/Programacion/Gabinator_Desktop/build/Gabinator_Desktop.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
