@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\gabys\OneDrive\Desktop\Programacion\Gabinator_Desktop\build\CMakeFiles\dbb8323667142d09d1bbacf6b51f5bda\generate.stamp.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{4A1620C2-2293-3D82-AA83-A19F43C47B3E}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
