@@ -1,4 +1,5 @@
 #include <iostream>
+<<<<<<< HEAD
 #include <windows.h>
 #include <opencv2/opencv.hpp>
 
@@ -45,6 +46,10 @@ int main(){
 
 	buf.clear();
     
+=======
+
+int main(){
+>>>>>>> 207cfdc98991ba03219bddc69a6fd13edb77509e
     std::cout << "Hello, world!" << std::endl;
     system("PAUSE");
 }

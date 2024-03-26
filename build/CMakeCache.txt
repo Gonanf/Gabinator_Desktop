@@ -23,6 +23,7 @@ CMAKE_AR:FILEPATH=C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Too
 CMAKE_CONFIGURATION_TYPES:STRING=Debug;Release;MinSizeRel;RelWithDebInfo
 
 //Flags used by the CXX compiler during all build types.
+<<<<<<< HEAD
 CMAKE_CXX_FLAGS:STRING=/DWIN32 /D_WINDOWS /EHsc
 
 //Flags used by the CXX compiler during DEBUG builds.
@@ -36,11 +37,27 @@ CMAKE_CXX_FLAGS_RELEASE:STRING=/O2 /Ob2 /DNDEBUG
 
 //Flags used by the CXX compiler during RELWITHDEBINFO builds.
 CMAKE_CXX_FLAGS_RELWITHDEBINFO:STRING=/O2 /Ob1 /DNDEBUG
+=======
+CMAKE_CXX_FLAGS:STRING=/DWIN32 /D_WINDOWS /W3 /GR /EHsc
+
+//Flags used by the CXX compiler during DEBUG builds.
+CMAKE_CXX_FLAGS_DEBUG:STRING=/MDd /Zi /Ob0 /Od /RTC1
+
+//Flags used by the CXX compiler during MINSIZEREL builds.
+CMAKE_CXX_FLAGS_MINSIZEREL:STRING=/MD /O1 /Ob1 /DNDEBUG
+
+//Flags used by the CXX compiler during RELEASE builds.
+CMAKE_CXX_FLAGS_RELEASE:STRING=/MD /O2 /Ob2 /DNDEBUG
+
+//Flags used by the CXX compiler during RELWITHDEBINFO builds.
+CMAKE_CXX_FLAGS_RELWITHDEBINFO:STRING=/MD /Zi /O2 /Ob1 /DNDEBUG
+>>>>>>> 207cfdc98991ba03219bddc69a6fd13edb77509e
 
 //Libraries linked by default with all C++ applications.
 CMAKE_CXX_STANDARD_LIBRARIES:STRING=kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib
 
 //Flags used by the C compiler during all build types.
+<<<<<<< HEAD
 CMAKE_C_FLAGS:STRING=/DWIN32 /D_WINDOWS
 
 //Flags used by the C compiler during DEBUG builds.
@@ -54,6 +71,21 @@ CMAKE_C_FLAGS_RELEASE:STRING=/O2 /Ob2 /DNDEBUG
 
 //Flags used by the C compiler during RELWITHDEBINFO builds.
 CMAKE_C_FLAGS_RELWITHDEBINFO:STRING=/O2 /Ob1 /DNDEBUG
+=======
+CMAKE_C_FLAGS:STRING=/DWIN32 /D_WINDOWS /W3
+
+//Flags used by the C compiler during DEBUG builds.
+CMAKE_C_FLAGS_DEBUG:STRING=/MDd /Zi /Ob0 /Od /RTC1
+
+//Flags used by the C compiler during MINSIZEREL builds.
+CMAKE_C_FLAGS_MINSIZEREL:STRING=/MD /O1 /Ob1 /DNDEBUG
+
+//Flags used by the C compiler during RELEASE builds.
+CMAKE_C_FLAGS_RELEASE:STRING=/MD /O2 /Ob2 /DNDEBUG
+
+//Flags used by the C compiler during RELWITHDEBINFO builds.
+CMAKE_C_FLAGS_RELWITHDEBINFO:STRING=/MD /Zi /O2 /Ob1 /DNDEBUG
+>>>>>>> 207cfdc98991ba03219bddc69a6fd13edb77509e
 
 //Libraries linked by default with all C applications.
 CMAKE_C_STANDARD_LIBRARIES:STRING=kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib
@@ -194,12 +226,15 @@ Gabinator_Desktop_IS_TOP_LEVEL:STATIC=ON
 //Value Computed by CMake
 Gabinator_Desktop_SOURCE_DIR:STATIC=C:/Users/gabys/OneDrive/Desktop/Programacion/Gabinator_Desktop
 
+<<<<<<< HEAD
 //The directory containing a CMake configuration file for OPEN_CV.
 OPEN_CV_DIR:PATH=OPEN_CV_DIR-NOTFOUND
 
 //The directory containing a CMake configuration file for OpenCV.
 OpenCV_DIR:PATH=OpenCV_DIR-NOTFOUND
 
+=======
+>>>>>>> 207cfdc98991ba03219bddc69a6fd13edb77509e
 
 ########################
 # INTERNAL cache entries
@@ -331,6 +366,9 @@ CMAKE_STATIC_LINKER_FLAGS_RELEASE-ADVANCED:INTERNAL=1
 CMAKE_STATIC_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_VERBOSE_MAKEFILE
 CMAKE_VERBOSE_MAKEFILE-ADVANCED:INTERNAL=1
+<<<<<<< HEAD
 //Details about finding OpenCV
 FIND_PACKAGE_MESSAGE_DETAILS_OpenCV:INTERNAL=[C:/opencv/build][v4.9.0()]
+=======
+>>>>>>> 207cfdc98991ba03219bddc69a6fd13edb77509e
 

@@ -1,8 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
+<<<<<<< HEAD
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CMakePredefinedTargets", "CMakePredefinedTargets", "{BBB76C89-0CAC-34DC-82EE-A268561F62E7}"
 EndProject
+=======
+>>>>>>> 207cfdc98991ba03219bddc69a6fd13edb77509e
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ALL_BUILD", "ALL_BUILD.vcxproj", "{5CA0CF69-48E1-3F7A-BDC7-2AAC7D491E95}"
 	ProjectSection(ProjectDependencies) = postProject
 		{033C17FF-4ED5-3801-AE1B-0B999F52329F} = {033C17FF-4ED5-3801-AE1B-0B999F52329F}
@@ -47,10 +50,13 @@ Global
 		{8F9278F2-ECD6-3D3C-BD86-459741A277E3}.RelWithDebInfo|x64.ActiveCfg = RelWithDebInfo|x64
 		{8F9278F2-ECD6-3D3C-BD86-459741A277E3}.RelWithDebInfo|x64.Build.0 = RelWithDebInfo|x64
 	EndGlobalSection
+<<<<<<< HEAD
 	GlobalSection(NestedProjects) = preSolution
 		{5CA0CF69-48E1-3F7A-BDC7-2AAC7D491E95} = {BBB76C89-0CAC-34DC-82EE-A268561F62E7}
 		{8F9278F2-ECD6-3D3C-BD86-459741A277E3} = {BBB76C89-0CAC-34DC-82EE-A268561F62E7}
 	EndGlobalSection
+=======
+>>>>>>> 207cfdc98991ba03219bddc69a6fd13edb77509e
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A1F42499-0652-32EB-91AB-EB5DF451A7CF}
 	EndGlobalSection
