@@ -5,11 +5,7 @@ events:
     kind: "message-v1"
     backtrace:
       - "C:/Program Files/CMake/share/cmake-3.29/Modules/CMakeDetermineSystem.cmake:205 (message)"
-<<<<<<< HEAD
       - "CMakeLists.txt:2 (project)"
-=======
-      - "CMakeLists.txt:1 (project)"
->>>>>>> 207cfdc98991ba03219bddc69a6fd13edb77509e
     message: |
       The system is: Windows - 10.0.22631 - AMD64
   -
@@ -18,11 +14,7 @@ events:
       - "C:/Program Files/CMake/share/cmake-3.29/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
       - "C:/Program Files/CMake/share/cmake-3.29/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
       - "C:/Program Files/CMake/share/cmake-3.29/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
-<<<<<<< HEAD
       - "CMakeLists.txt:2 (project)"
-=======
-      - "CMakeLists.txt:1 (project)"
->>>>>>> 207cfdc98991ba03219bddc69a6fd13edb77509e
     message: |
       Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
       Compiler:  
@@ -32,11 +24,7 @@ events:
       The output was:
       0
       Versión de MSBuild 17.8.5+b5265ef37 para .NET Framework
-<<<<<<< HEAD
-      Compilación iniciada a las 26/3/2024 13:36:35.
-=======
-      Compilación iniciada a las 25/3/2024 19:51:32.
->>>>>>> 207cfdc98991ba03219bddc69a6fd13edb77509e
+      Compilación iniciada a las 27/3/2024 17:59:38.
       
       Proyecto "C:\\Users\\gabys\\OneDrive\\Desktop\\Programacion\\Gabinator_Desktop\\build\\CMakeFiles\\3.29.0\\CompilerIdC\\CompilerIdC.vcxproj" en nodo 1 (destinos predeterminados).
       PrepareForBuild:
@@ -65,11 +53,7 @@ events:
           0 Advertencia(s)
           0 Errores
       
-<<<<<<< HEAD
-      Tiempo transcurrido 00:00:00.51
-=======
-      Tiempo transcurrido 00:00:01.07
->>>>>>> 207cfdc98991ba03219bddc69a6fd13edb77509e
+      Tiempo transcurrido 00:00:00.50
       
       
       Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CompilerIdC.exe"
@@ -85,11 +69,7 @@ events:
       - "C:/Program Files/CMake/share/cmake-3.29/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
       - "C:/Program Files/CMake/share/cmake-3.29/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
       - "C:/Program Files/CMake/share/cmake-3.29/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
-<<<<<<< HEAD
       - "CMakeLists.txt:2 (project)"
-=======
-      - "CMakeLists.txt:1 (project)"
->>>>>>> 207cfdc98991ba03219bddc69a6fd13edb77509e
     message: |
       Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
       Compiler:  
@@ -99,11 +79,7 @@ events:
       The output was:
       0
       Versión de MSBuild 17.8.5+b5265ef37 para .NET Framework
-<<<<<<< HEAD
-      Compilación iniciada a las 26/3/2024 13:36:36.
-=======
-      Compilación iniciada a las 25/3/2024 19:51:33.
->>>>>>> 207cfdc98991ba03219bddc69a6fd13edb77509e
+      Compilación iniciada a las 27/3/2024 17:59:39.
       
       Proyecto "C:\\Users\\gabys\\OneDrive\\Desktop\\Programacion\\Gabinator_Desktop\\build\\CMakeFiles\\3.29.0\\CompilerIdCXX\\CompilerIdCXX.vcxproj" en nodo 1 (destinos predeterminados).
       PrepareForBuild:
@@ -132,11 +108,7 @@ events:
           0 Advertencia(s)
           0 Errores
       
-<<<<<<< HEAD
-      Tiempo transcurrido 00:00:00.50
-=======
       Tiempo transcurrido 00:00:00.52
->>>>>>> 207cfdc98991ba03219bddc69a6fd13edb77509e
       
       
       Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CompilerIdCXX.exe"
@@ -151,96 +123,54 @@ events:
     backtrace:
       - "C:/Program Files/CMake/share/cmake-3.29/Modules/CMakeDetermineCompilerABI.cmake:64 (try_compile)"
       - "C:/Program Files/CMake/share/cmake-3.29/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
-<<<<<<< HEAD
       - "CMakeLists.txt:2 (project)"
     checks:
       - "Detecting C compiler ABI info"
     directories:
-      source: "C:/Users/gabys/OneDrive/Desktop/Programacion/Gabinator_Desktop/build/CMakeFiles/CMakeScratch/TryCompile-dbhovi"
-      binary: "C:/Users/gabys/OneDrive/Desktop/Programacion/Gabinator_Desktop/build/CMakeFiles/CMakeScratch/TryCompile-dbhovi"
+      source: "C:/Users/gabys/OneDrive/Desktop/Programacion/Gabinator_Desktop/build/CMakeFiles/CMakeScratch/TryCompile-wbdmdr"
+      binary: "C:/Users/gabys/OneDrive/Desktop/Programacion/Gabinator_Desktop/build/CMakeFiles/CMakeScratch/TryCompile-wbdmdr"
     cmakeVariables:
       CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS"
       CMAKE_C_FLAGS_DEBUG: "/Ob0 /Od /RTC1"
       CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
-=======
-      - "CMakeLists.txt:1 (project)"
-    checks:
-      - "Detecting C compiler ABI info"
-    directories:
-      source: "C:/Users/gabys/OneDrive/Desktop/Programacion/Gabinator_Desktop/build/CMakeFiles/CMakeScratch/TryCompile-42yv05"
-      binary: "C:/Users/gabys/OneDrive/Desktop/Programacion/Gabinator_Desktop/build/CMakeFiles/CMakeScratch/TryCompile-42yv05"
-    cmakeVariables:
-      CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS /W3"
->>>>>>> 207cfdc98991ba03219bddc69a6fd13edb77509e
     buildResult:
       variable: "CMAKE_C_ABI_COMPILED"
       cached: true
       stdout: |
-<<<<<<< HEAD
-        Change Dir: 'C:/Users/gabys/OneDrive/Desktop/Programacion/Gabinator_Desktop/build/CMakeFiles/CMakeScratch/TryCompile-dbhovi'
+        Change Dir: 'C:/Users/gabys/OneDrive/Desktop/Programacion/Gabinator_Desktop/build/CMakeFiles/CMakeScratch/TryCompile-wbdmdr'
         
-        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_2beee.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_916c5.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
         Versión de MSBuild 17.8.5+b5265ef37 para .NET Framework
-        Compilación iniciada a las 26/3/2024 13:36:36.
+        Compilación iniciada a las 27/3/2024 17:59:40.
         
-        Proyecto "C:\\Users\\gabys\\OneDrive\\Desktop\\Programacion\\Gabinator_Desktop\\build\\CMakeFiles\\CMakeScratch\\TryCompile-dbhovi\\cmTC_2beee.vcxproj" en nodo 1 (destinos predeterminados).
+        Proyecto "C:\\Users\\gabys\\OneDrive\\Desktop\\Programacion\\Gabinator_Desktop\\build\\CMakeFiles\\CMakeScratch\\TryCompile-wbdmdr\\cmTC_916c5.vcxproj" en nodo 1 (destinos predeterminados).
         PrepareForBuild:
-          Creando directorio "cmTC_2beee.dir\\Debug\\".
+          Creando directorio "cmTC_916c5.dir\\Debug\\".
           Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
-          Creando directorio "C:\\Users\\gabys\\OneDrive\\Desktop\\Programacion\\Gabinator_Desktop\\build\\CMakeFiles\\CMakeScratch\\TryCompile-dbhovi\\Debug\\".
-          Creando directorio "cmTC_2beee.dir\\Debug\\cmTC_2beee.tlog\\".
+          Creando directorio "C:\\Users\\gabys\\OneDrive\\Desktop\\Programacion\\Gabinator_Desktop\\build\\CMakeFiles\\CMakeScratch\\TryCompile-wbdmdr\\Debug\\".
+          Creando directorio "cmTC_916c5.dir\\Debug\\cmTC_916c5.tlog\\".
         InitializeBuildStatus:
-          Se creará "cmTC_2beee.dir\\Debug\\cmTC_2beee.tlog\\unsuccessfulbuild" porque se especificó "AlwaysCreate".
-          Aplicando tarea Touch a "cmTC_2beee.dir\\Debug\\cmTC_2beee.tlog\\unsuccessfulbuild".
+          Se creará "cmTC_916c5.dir\\Debug\\cmTC_916c5.tlog\\unsuccessfulbuild" porque se especificó "AlwaysCreate".
+          Aplicando tarea Touch a "cmTC_916c5.dir\\Debug\\cmTC_916c5.tlog\\unsuccessfulbuild".
         ClCompile:
-          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.38.33130\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_2beee.dir\\Debug\\\\" /Fd"cmTC_2beee.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-3.29\\Modules\\CMakeCCompilerABI.c"
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.38.33130\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_916c5.dir\\Debug\\\\" /Fd"cmTC_916c5.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-3.29\\Modules\\CMakeCCompilerABI.c"
           Microsoft (R) C/C++ Optimizing Compiler Version 19.38.33135 for x64
           Copyright (C) Microsoft Corporation.  All rights reserved.
-          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_2beee.dir\\Debug\\\\" /Fd"cmTC_2beee.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-3.29\\Modules\\CMakeCCompilerABI.c"
+          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_916c5.dir\\Debug\\\\" /Fd"cmTC_916c5.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-3.29\\Modules\\CMakeCCompilerABI.c"
           CMakeCCompilerABI.c
         Link:
-          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.38.33130\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\gabys\\OneDrive\\Desktop\\Programacion\\Gabinator_Desktop\\build\\CMakeFiles\\CMakeScratch\\TryCompile-dbhovi\\Debug\\cmTC_2beee.exe" /INCREMENTAL /ILK:"cmTC_2beee.dir\\Debug\\cmTC_2beee.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/gabys/OneDrive/Desktop/Programacion/Gabinator_Desktop/build/CMakeFiles/CMakeScratch/TryCompile-dbhovi/Debug/cmTC_2beee.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/gabys/OneDrive/Desktop/Programacion/Gabinator_Desktop/build/CMakeFiles/CMakeScratch/TryCompile-dbhovi/Debug/cmTC_2beee.lib" /MACHINE:X64  /machine:x64 cmTC_2beee.dir\\Debug\\CMakeCCompilerABI.obj
-          cmTC_2beee.vcxproj -> C:\\Users\\gabys\\OneDrive\\Desktop\\Programacion\\Gabinator_Desktop\\build\\CMakeFiles\\CMakeScratch\\TryCompile-dbhovi\\Debug\\cmTC_2beee.exe
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.38.33130\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\gabys\\OneDrive\\Desktop\\Programacion\\Gabinator_Desktop\\build\\CMakeFiles\\CMakeScratch\\TryCompile-wbdmdr\\Debug\\cmTC_916c5.exe" /INCREMENTAL /ILK:"cmTC_916c5.dir\\Debug\\cmTC_916c5.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/gabys/OneDrive/Desktop/Programacion/Gabinator_Desktop/build/CMakeFiles/CMakeScratch/TryCompile-wbdmdr/Debug/cmTC_916c5.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/gabys/OneDrive/Desktop/Programacion/Gabinator_Desktop/build/CMakeFiles/CMakeScratch/TryCompile-wbdmdr/Debug/cmTC_916c5.lib" /MACHINE:X64  /machine:x64 cmTC_916c5.dir\\Debug\\CMakeCCompilerABI.obj
+          cmTC_916c5.vcxproj -> C:\\Users\\gabys\\OneDrive\\Desktop\\Programacion\\Gabinator_Desktop\\build\\CMakeFiles\\CMakeScratch\\TryCompile-wbdmdr\\Debug\\cmTC_916c5.exe
         FinalizeBuildStatus:
-          Se eliminará el archivo "cmTC_2beee.dir\\Debug\\cmTC_2beee.tlog\\unsuccessfulbuild".
-          Aplicando tarea Touch a "cmTC_2beee.dir\\Debug\\cmTC_2beee.tlog\\cmTC_2beee.lastbuildstate".
-        Compilación del proyecto terminada "C:\\Users\\gabys\\OneDrive\\Desktop\\Programacion\\Gabinator_Desktop\\build\\CMakeFiles\\CMakeScratch\\TryCompile-dbhovi\\cmTC_2beee.vcxproj" (destinos predeterminados).
-=======
-        Change Dir: 'C:/Users/gabys/OneDrive/Desktop/Programacion/Gabinator_Desktop/build/CMakeFiles/CMakeScratch/TryCompile-42yv05'
-        
-        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_9f1c1.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
-        Versión de MSBuild 17.8.5+b5265ef37 para .NET Framework
-        Compilación iniciada a las 25/3/2024 19:51:34.
-        
-        Proyecto "C:\\Users\\gabys\\OneDrive\\Desktop\\Programacion\\Gabinator_Desktop\\build\\CMakeFiles\\CMakeScratch\\TryCompile-42yv05\\cmTC_9f1c1.vcxproj" en nodo 1 (destinos predeterminados).
-        PrepareForBuild:
-          Creando directorio "cmTC_9f1c1.dir\\Debug\\".
-          Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
-          Creando directorio "C:\\Users\\gabys\\OneDrive\\Desktop\\Programacion\\Gabinator_Desktop\\build\\CMakeFiles\\CMakeScratch\\TryCompile-42yv05\\Debug\\".
-          Creando directorio "cmTC_9f1c1.dir\\Debug\\cmTC_9f1c1.tlog\\".
-        InitializeBuildStatus:
-          Se creará "cmTC_9f1c1.dir\\Debug\\cmTC_9f1c1.tlog\\unsuccessfulbuild" porque se especificó "AlwaysCreate".
-          Aplicando tarea Touch a "cmTC_9f1c1.dir\\Debug\\cmTC_9f1c1.tlog\\unsuccessfulbuild".
-        ClCompile:
-          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.38.33130\\bin\\HostX64\\x64\\CL.exe /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_9f1c1.dir\\Debug\\\\" /Fd"cmTC_9f1c1.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TC /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-3.29\\Modules\\CMakeCCompilerABI.c"
-          Microsoft (R) C/C++ Optimizing Compiler Version 19.38.33135 for x64
-          Copyright (C) Microsoft Corporation.  All rights reserved.
-          cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_9f1c1.dir\\Debug\\\\" /Fd"cmTC_9f1c1.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TC /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-3.29\\Modules\\CMakeCCompilerABI.c"
-          CMakeCCompilerABI.c
-        Link:
-          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.38.33130\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\gabys\\OneDrive\\Desktop\\Programacion\\Gabinator_Desktop\\build\\CMakeFiles\\CMakeScratch\\TryCompile-42yv05\\Debug\\cmTC_9f1c1.exe" /INCREMENTAL /ILK:"cmTC_9f1c1.dir\\Debug\\cmTC_9f1c1.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/gabys/OneDrive/Desktop/Programacion/Gabinator_Desktop/build/CMakeFiles/CMakeScratch/TryCompile-42yv05/Debug/cmTC_9f1c1.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/gabys/OneDrive/Desktop/Programacion/Gabinator_Desktop/build/CMakeFiles/CMakeScratch/TryCompile-42yv05/Debug/cmTC_9f1c1.lib" /MACHINE:X64  /machine:x64 cmTC_9f1c1.dir\\Debug\\CMakeCCompilerABI.obj
-          cmTC_9f1c1.vcxproj -> C:\\Users\\gabys\\OneDrive\\Desktop\\Programacion\\Gabinator_Desktop\\build\\CMakeFiles\\CMakeScratch\\TryCompile-42yv05\\Debug\\cmTC_9f1c1.exe
-        FinalizeBuildStatus:
-          Se eliminará el archivo "cmTC_9f1c1.dir\\Debug\\cmTC_9f1c1.tlog\\unsuccessfulbuild".
-          Aplicando tarea Touch a "cmTC_9f1c1.dir\\Debug\\cmTC_9f1c1.tlog\\cmTC_9f1c1.lastbuildstate".
-        Compilación del proyecto terminada "C:\\Users\\gabys\\OneDrive\\Desktop\\Programacion\\Gabinator_Desktop\\build\\CMakeFiles\\CMakeScratch\\TryCompile-42yv05\\cmTC_9f1c1.vcxproj" (destinos predeterminados).
->>>>>>> 207cfdc98991ba03219bddc69a6fd13edb77509e
+          Se eliminará el archivo "cmTC_916c5.dir\\Debug\\cmTC_916c5.tlog\\unsuccessfulbuild".
+          Aplicando tarea Touch a "cmTC_916c5.dir\\Debug\\cmTC_916c5.tlog\\cmTC_916c5.lastbuildstate".
+        Compilación del proyecto terminada "C:\\Users\\gabys\\OneDrive\\Desktop\\Programacion\\Gabinator_Desktop\\build\\CMakeFiles\\CMakeScratch\\TryCompile-wbdmdr\\cmTC_916c5.vcxproj" (destinos predeterminados).
         
         Compilación correcta.
             0 Advertencia(s)
             0 Errores
         
-        Tiempo transcurrido 00:00:00.49
+        Tiempo transcurrido 00:00:00.51
         
       exitCode: 0
   -
@@ -248,11 +178,7 @@ events:
     backtrace:
       - "C:/Program Files/CMake/share/cmake-3.29/Modules/CMakeDetermineCompilerABI.cmake:170 (message)"
       - "C:/Program Files/CMake/share/cmake-3.29/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
-<<<<<<< HEAD
       - "CMakeLists.txt:2 (project)"
-=======
-      - "CMakeLists.txt:1 (project)"
->>>>>>> 207cfdc98991ba03219bddc69a6fd13edb77509e
     message: |
       Parsed C implicit link information:
         link line regex: [^( *|.*[/\\])(ld[0-9]*(\\.[a-z]+)?|link\\.exe|lld-link(\\.exe)?|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
@@ -270,11 +196,7 @@ events:
       - "C:/Program Files/CMake/share/cmake-3.29/Modules/Internal/CMakeDetermineLinkerId.cmake:40 (message)"
       - "C:/Program Files/CMake/share/cmake-3.29/Modules/CMakeDetermineCompilerABI.cmake:207 (cmake_determine_linker_id)"
       - "C:/Program Files/CMake/share/cmake-3.29/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
-<<<<<<< HEAD
       - "CMakeLists.txt:2 (project)"
-=======
-      - "CMakeLists.txt:1 (project)"
->>>>>>> 207cfdc98991ba03219bddc69a6fd13edb77509e
     message: |
       Running the C compiler's linker: "C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.38.33130/bin/HostX64/x64/link.exe" "-v"
       Microsoft (R) Incremental Linker Version 14.38.33135.0
@@ -284,100 +206,54 @@ events:
     backtrace:
       - "C:/Program Files/CMake/share/cmake-3.29/Modules/CMakeDetermineCompilerABI.cmake:64 (try_compile)"
       - "C:/Program Files/CMake/share/cmake-3.29/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
-<<<<<<< HEAD
       - "CMakeLists.txt:2 (project)"
     checks:
       - "Detecting CXX compiler ABI info"
     directories:
-      source: "C:/Users/gabys/OneDrive/Desktop/Programacion/Gabinator_Desktop/build/CMakeFiles/CMakeScratch/TryCompile-ndn7wi"
-      binary: "C:/Users/gabys/OneDrive/Desktop/Programacion/Gabinator_Desktop/build/CMakeFiles/CMakeScratch/TryCompile-ndn7wi"
+      source: "C:/Users/gabys/OneDrive/Desktop/Programacion/Gabinator_Desktop/build/CMakeFiles/CMakeScratch/TryCompile-gj5czh"
+      binary: "C:/Users/gabys/OneDrive/Desktop/Programacion/Gabinator_Desktop/build/CMakeFiles/CMakeScratch/TryCompile-gj5czh"
     cmakeVariables:
       CMAKE_CXX_FLAGS: "/DWIN32 /D_WINDOWS /EHsc"
       CMAKE_CXX_FLAGS_DEBUG: "/Ob0 /Od /RTC1"
       CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
-=======
-      - "CMakeLists.txt:1 (project)"
-    checks:
-      - "Detecting CXX compiler ABI info"
-    directories:
-      source: "C:/Users/gabys/OneDrive/Desktop/Programacion/Gabinator_Desktop/build/CMakeFiles/CMakeScratch/TryCompile-ai1wj8"
-      binary: "C:/Users/gabys/OneDrive/Desktop/Programacion/Gabinator_Desktop/build/CMakeFiles/CMakeScratch/TryCompile-ai1wj8"
-    cmakeVariables:
-      CMAKE_CXX_FLAGS: "/DWIN32 /D_WINDOWS /W3 /GR /EHsc"
->>>>>>> 207cfdc98991ba03219bddc69a6fd13edb77509e
     buildResult:
       variable: "CMAKE_CXX_ABI_COMPILED"
       cached: true
       stdout: |
-<<<<<<< HEAD
-        Change Dir: 'C:/Users/gabys/OneDrive/Desktop/Programacion/Gabinator_Desktop/build/CMakeFiles/CMakeScratch/TryCompile-ndn7wi'
+        Change Dir: 'C:/Users/gabys/OneDrive/Desktop/Programacion/Gabinator_Desktop/build/CMakeFiles/CMakeScratch/TryCompile-gj5czh'
         
-        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_5d243.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_6ebc3.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
         Versión de MSBuild 17.8.5+b5265ef37 para .NET Framework
-        Compilación iniciada a las 26/3/2024 13:36:37.
+        Compilación iniciada a las 27/3/2024 17:59:40.
         
-        Proyecto "C:\\Users\\gabys\\OneDrive\\Desktop\\Programacion\\Gabinator_Desktop\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ndn7wi\\cmTC_5d243.vcxproj" en nodo 1 (destinos predeterminados).
+        Proyecto "C:\\Users\\gabys\\OneDrive\\Desktop\\Programacion\\Gabinator_Desktop\\build\\CMakeFiles\\CMakeScratch\\TryCompile-gj5czh\\cmTC_6ebc3.vcxproj" en nodo 1 (destinos predeterminados).
         PrepareForBuild:
-          Creando directorio "cmTC_5d243.dir\\Debug\\".
+          Creando directorio "cmTC_6ebc3.dir\\Debug\\".
           Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
-          Creando directorio "C:\\Users\\gabys\\OneDrive\\Desktop\\Programacion\\Gabinator_Desktop\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ndn7wi\\Debug\\".
-          Creando directorio "cmTC_5d243.dir\\Debug\\cmTC_5d243.tlog\\".
+          Creando directorio "C:\\Users\\gabys\\OneDrive\\Desktop\\Programacion\\Gabinator_Desktop\\build\\CMakeFiles\\CMakeScratch\\TryCompile-gj5czh\\Debug\\".
+          Creando directorio "cmTC_6ebc3.dir\\Debug\\cmTC_6ebc3.tlog\\".
         InitializeBuildStatus:
-          Se creará "cmTC_5d243.dir\\Debug\\cmTC_5d243.tlog\\unsuccessfulbuild" porque se especificó "AlwaysCreate".
-          Aplicando tarea Touch a "cmTC_5d243.dir\\Debug\\cmTC_5d243.tlog\\unsuccessfulbuild".
+          Se creará "cmTC_6ebc3.dir\\Debug\\cmTC_6ebc3.tlog\\unsuccessfulbuild" porque se especificó "AlwaysCreate".
+          Aplicando tarea Touch a "cmTC_6ebc3.dir\\Debug\\cmTC_6ebc3.tlog\\unsuccessfulbuild".
         ClCompile:
-          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.38.33130\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_5d243.dir\\Debug\\\\" /Fd"cmTC_5d243.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TP /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-3.29\\Modules\\CMakeCXXCompilerABI.cpp"
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.38.33130\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_6ebc3.dir\\Debug\\\\" /Fd"cmTC_6ebc3.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TP /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-3.29\\Modules\\CMakeCXXCompilerABI.cpp"
           Microsoft (R) C/C++ Optimizing Compiler Version 19.38.33135 for x64
           Copyright (C) Microsoft Corporation.  All rights reserved.
-          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_5d243.dir\\Debug\\\\" /Fd"cmTC_5d243.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TP /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-3.29\\Modules\\CMakeCXXCompilerABI.cpp"
+          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_6ebc3.dir\\Debug\\\\" /Fd"cmTC_6ebc3.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TP /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-3.29\\Modules\\CMakeCXXCompilerABI.cpp"
           CMakeCXXCompilerABI.cpp
         Link:
-          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.38.33130\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\gabys\\OneDrive\\Desktop\\Programacion\\Gabinator_Desktop\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ndn7wi\\Debug\\cmTC_5d243.exe" /INCREMENTAL /ILK:"cmTC_5d243.dir\\Debug\\cmTC_5d243.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/gabys/OneDrive/Desktop/Programacion/Gabinator_Desktop/build/CMakeFiles/CMakeScratch/TryCompile-ndn7wi/Debug/cmTC_5d243.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/gabys/OneDrive/Desktop/Programacion/Gabinator_Desktop/build/CMakeFiles/CMakeScratch/TryCompile-ndn7wi/Debug/cmTC_5d243.lib" /MACHINE:X64  /machine:x64 cmTC_5d243.dir\\Debug\\CMakeCXXCompilerABI.obj
-          cmTC_5d243.vcxproj -> C:\\Users\\gabys\\OneDrive\\Desktop\\Programacion\\Gabinator_Desktop\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ndn7wi\\Debug\\cmTC_5d243.exe
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.38.33130\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\gabys\\OneDrive\\Desktop\\Programacion\\Gabinator_Desktop\\build\\CMakeFiles\\CMakeScratch\\TryCompile-gj5czh\\Debug\\cmTC_6ebc3.exe" /INCREMENTAL /ILK:"cmTC_6ebc3.dir\\Debug\\cmTC_6ebc3.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/gabys/OneDrive/Desktop/Programacion/Gabinator_Desktop/build/CMakeFiles/CMakeScratch/TryCompile-gj5czh/Debug/cmTC_6ebc3.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/gabys/OneDrive/Desktop/Programacion/Gabinator_Desktop/build/CMakeFiles/CMakeScratch/TryCompile-gj5czh/Debug/cmTC_6ebc3.lib" /MACHINE:X64  /machine:x64 cmTC_6ebc3.dir\\Debug\\CMakeCXXCompilerABI.obj
+          cmTC_6ebc3.vcxproj -> C:\\Users\\gabys\\OneDrive\\Desktop\\Programacion\\Gabinator_Desktop\\build\\CMakeFiles\\CMakeScratch\\TryCompile-gj5czh\\Debug\\cmTC_6ebc3.exe
         FinalizeBuildStatus:
-          Se eliminará el archivo "cmTC_5d243.dir\\Debug\\cmTC_5d243.tlog\\unsuccessfulbuild".
-          Aplicando tarea Touch a "cmTC_5d243.dir\\Debug\\cmTC_5d243.tlog\\cmTC_5d243.lastbuildstate".
-        Compilación del proyecto terminada "C:\\Users\\gabys\\OneDrive\\Desktop\\Programacion\\Gabinator_Desktop\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ndn7wi\\cmTC_5d243.vcxproj" (destinos predeterminados).
-=======
-        Change Dir: 'C:/Users/gabys/OneDrive/Desktop/Programacion/Gabinator_Desktop/build/CMakeFiles/CMakeScratch/TryCompile-ai1wj8'
-        
-        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_649c1.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
-        Versión de MSBuild 17.8.5+b5265ef37 para .NET Framework
-        Compilación iniciada a las 25/3/2024 19:51:34.
-        
-        Proyecto "C:\\Users\\gabys\\OneDrive\\Desktop\\Programacion\\Gabinator_Desktop\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ai1wj8\\cmTC_649c1.vcxproj" en nodo 1 (destinos predeterminados).
-        PrepareForBuild:
-          Creando directorio "cmTC_649c1.dir\\Debug\\".
-          Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
-          Creando directorio "C:\\Users\\gabys\\OneDrive\\Desktop\\Programacion\\Gabinator_Desktop\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ai1wj8\\Debug\\".
-          Creando directorio "cmTC_649c1.dir\\Debug\\cmTC_649c1.tlog\\".
-        InitializeBuildStatus:
-          Se creará "cmTC_649c1.dir\\Debug\\cmTC_649c1.tlog\\unsuccessfulbuild" porque se especificó "AlwaysCreate".
-          Aplicando tarea Touch a "cmTC_649c1.dir\\Debug\\cmTC_649c1.tlog\\unsuccessfulbuild".
-        ClCompile:
-          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.38.33130\\bin\\HostX64\\x64\\CL.exe /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_649c1.dir\\Debug\\\\" /Fd"cmTC_649c1.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TP /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-3.29\\Modules\\CMakeCXXCompilerABI.cpp"
-          Microsoft (R) C/C++ Optimizing Compiler Version 19.38.33135 for x64
-          Copyright (C) Microsoft Corporation.  All rights reserved.
-          cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_649c1.dir\\Debug\\\\" /Fd"cmTC_649c1.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TP /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-3.29\\Modules\\CMakeCXXCompilerABI.cpp"
-          CMakeCXXCompilerABI.cpp
-        Link:
-          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.38.33130\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\gabys\\OneDrive\\Desktop\\Programacion\\Gabinator_Desktop\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ai1wj8\\Debug\\cmTC_649c1.exe" /INCREMENTAL /ILK:"cmTC_649c1.dir\\Debug\\cmTC_649c1.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/gabys/OneDrive/Desktop/Programacion/Gabinator_Desktop/build/CMakeFiles/CMakeScratch/TryCompile-ai1wj8/Debug/cmTC_649c1.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/gabys/OneDrive/Desktop/Programacion/Gabinator_Desktop/build/CMakeFiles/CMakeScratch/TryCompile-ai1wj8/Debug/cmTC_649c1.lib" /MACHINE:X64  /machine:x64 cmTC_649c1.dir\\Debug\\CMakeCXXCompilerABI.obj
-          cmTC_649c1.vcxproj -> C:\\Users\\gabys\\OneDrive\\Desktop\\Programacion\\Gabinator_Desktop\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ai1wj8\\Debug\\cmTC_649c1.exe
-        FinalizeBuildStatus:
-          Se eliminará el archivo "cmTC_649c1.dir\\Debug\\cmTC_649c1.tlog\\unsuccessfulbuild".
-          Aplicando tarea Touch a "cmTC_649c1.dir\\Debug\\cmTC_649c1.tlog\\cmTC_649c1.lastbuildstate".
-        Compilación del proyecto terminada "C:\\Users\\gabys\\OneDrive\\Desktop\\Programacion\\Gabinator_Desktop\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ai1wj8\\cmTC_649c1.vcxproj" (destinos predeterminados).
->>>>>>> 207cfdc98991ba03219bddc69a6fd13edb77509e
+          Se eliminará el archivo "cmTC_6ebc3.dir\\Debug\\cmTC_6ebc3.tlog\\unsuccessfulbuild".
+          Aplicando tarea Touch a "cmTC_6ebc3.dir\\Debug\\cmTC_6ebc3.tlog\\cmTC_6ebc3.lastbuildstate".
+        Compilación del proyecto terminada "C:\\Users\\gabys\\OneDrive\\Desktop\\Programacion\\Gabinator_Desktop\\build\\CMakeFiles\\CMakeScratch\\TryCompile-gj5czh\\cmTC_6ebc3.vcxproj" (destinos predeterminados).
         
         Compilación correcta.
             0 Advertencia(s)
             0 Errores
         
-<<<<<<< HEAD
-        Tiempo transcurrido 00:00:00.48
-=======
-        Tiempo transcurrido 00:00:00.51
->>>>>>> 207cfdc98991ba03219bddc69a6fd13edb77509e
+        Tiempo transcurrido 00:00:00.50
         
       exitCode: 0
   -
@@ -385,11 +261,7 @@ events:
     backtrace:
       - "C:/Program Files/CMake/share/cmake-3.29/Modules/CMakeDetermineCompilerABI.cmake:170 (message)"
       - "C:/Program Files/CMake/share/cmake-3.29/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
-<<<<<<< HEAD
       - "CMakeLists.txt:2 (project)"
-=======
-      - "CMakeLists.txt:1 (project)"
->>>>>>> 207cfdc98991ba03219bddc69a6fd13edb77509e
     message: |
       Parsed CXX implicit link information:
         link line regex: [^( *|.*[/\\])(ld[0-9]*(\\.[a-z]+)?|link\\.exe|lld-link(\\.exe)?|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
@@ -407,11 +279,7 @@ events:
       - "C:/Program Files/CMake/share/cmake-3.29/Modules/Internal/CMakeDetermineLinkerId.cmake:40 (message)"
       - "C:/Program Files/CMake/share/cmake-3.29/Modules/CMakeDetermineCompilerABI.cmake:207 (cmake_determine_linker_id)"
       - "C:/Program Files/CMake/share/cmake-3.29/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
-<<<<<<< HEAD
       - "CMakeLists.txt:2 (project)"
-=======
-      - "CMakeLists.txt:1 (project)"
->>>>>>> 207cfdc98991ba03219bddc69a6fd13edb77509e
     message: |
       Running the CXX compiler's linker: "C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.38.33130/bin/HostX64/x64/link.exe" "-v"
       Microsoft (R) Incremental Linker Version 14.38.33135.0
