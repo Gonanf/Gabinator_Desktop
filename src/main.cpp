@@ -74,15 +74,15 @@ int8_t AccesoryProtocol(libusb_device_handle *handle)
     {
         response = libusb_control_transfer(handle, 0xC0, 51, 0, 0, ioBuffer, 2, 100);
     }
-    catch(const std::exception& e)
+    catch (const std::exception &e)
     {
         std::cerr << e.what() << '\n';
     }
-    
+
     std::cout << "Sending device version request sent, waiting response..." << std::endl;
     if (response < 0)
     {
-        std::cout << "Error: " << response << std::endl;
+        std::cout << "Error: " << libusb_error_name(response) << std::endl;
         return -1;
     }
     std::cout << "--------RESPONSE--------" << std::endl;
@@ -97,37 +97,37 @@ int8_t AccesoryProtocol(libusb_device_handle *handle)
     response = libusb_control_transfer(handle, 0x40, 52, 0, 0, (unsigned char *)manufacturer, strlen(manufacturer) + 1, 0);
     if (response < 0)
     {
-        std::cout << "Error: " << response << std::endl;
+        std::cout << "Error: " << libusb_error_name(response) << std::endl;
         return -1;
     }
     response = libusb_control_transfer(handle, 0x40, 52, 0, 1, (unsigned char *)modelName, strlen(modelName) + 1, 0);
     if (response < 0)
     {
-        std::cout << "Error: " << response << std::endl;
+        std::cout << "Error: " << libusb_error_name(response) << std::endl;
         return -1;
     }
     response = libusb_control_transfer(handle, 0x40, 52, 0, 2, (unsigned char *)description, strlen(description) + 1, 0);
     if (response < 0)
     {
-        std::cout << "Error: " << response << std::endl;
+        std::cout << "Error: " << libusb_error_name(response) << std::endl;
         return -1;
     }
     response = libusb_control_transfer(handle, 0x40, 52, 0, 3, (unsigned char *)version, strlen(version) + 1, 0);
     if (response < 0)
     {
-        std::cout << "Error: " << response << std::endl;
+        std::cout << "Error: " << libusb_error_name(response) << std::endl;
         return -1;
     }
     response = libusb_control_transfer(handle, 0x40, 52, 0, 4, (unsigned char *)uri, strlen(uri) + 1, 0);
     if (response < 0)
     {
-        std::cout << "Error: " << response << std::endl;
+        std::cout << "Error: " << libusb_error_name(response) << std::endl;
         return -1;
     }
     response = libusb_control_transfer(handle, 0x40, 52, 0, 5, (unsigned char *)serialNumber, strlen(serialNumber) + 1, 0);
     if (response < 0)
     {
-        std::cout << "Error: " << response << std::endl;
+        std::cout << "Error: " << libusb_error_name(response) << std::endl;
         return -1;
     }
 
@@ -136,6 +136,36 @@ int8_t AccesoryProtocol(libusb_device_handle *handle)
     return 1;
 }
 
+uint8_t InterfaceNum;
+
+int8_t ObtainAccesory()
+{
+    int f = RECONNECT_TRIES;
+    while (f-- > 0)
+    {
+        CelHandle = libusb_open_device_with_vid_pid(NULL, 0x18d1, 0x2d01);
+        if (CelHandle == NULL)
+        {
+            std::cout << "Retrying opening accesory USB" << std::endl;
+            CelHandle = libusb_open_device_with_vid_pid(NULL, 0x18d1, 0x2d00);
+            if (CelHandle == NULL){
+                std::cout << "Retrying opening accesory USB" << std::endl;
+            }
+            else{
+                std::cout << "Accesory opened 0x2d00" << std::endl;
+                return 1;
+            }
+        }
+        else{
+            std::cout << "Accesory opened 0x2d01" << std::endl;
+            return 1;
+        }
+        Sleep(3000);
+    }
+    if (CelHandle == NULL){
+        return -1;
+    }
+}
 
 int8_t ObtainNewUSB()
 {
@@ -148,41 +178,62 @@ int8_t ObtainNewUSB()
             Celular = dispositivos[i];
             libusb_device_handle *handle;
             std::cout << "Opening device " << CelularDesc.idProduct << "..." << std::endl;
-            int result = libusb_open(Celular,&handle);
-            if (result < 0){
-                std::cout << "Failed to open device " << result << std::endl;
-                if (result == LIBUSB_ERROR_NOT_SUPPORTED){
-                    std::cout << "This device cannot be opened" << std::endl;
-                }
+            int result = libusb_open(Celular, &handle);
+            if (result < 0)
+            {
+                std::cout << "Failed to open device " << libusb_error_name(result) << std::endl;
                 continue;
             }
-            libusb_set_auto_detach_kernel_driver(handle, 1);
+            libusb_set_configuration(handle, 0);
+            if (libusb_kernel_driver_active(handle, 0))
+            {
+                libusb_set_auto_detach_kernel_driver(handle, 0);
+            }
+
+            if (CelularDesc.idVendor == 0x18D1 && CelularDesc.idProduct == 0x2D01 || CelularDesc.idVendor == 0x18d1 && CelularDesc.idProduct == 0x2D00)
+            {
+                std::cout << std::endl << "ACCESORY DEVICE FOUND" << std::endl << std::endl;
+                if (ObtainAccesory() < 0){
+                    std::cout << "Error obtaining accesory " << std::endl;
+                    return -1;
+                }
+                std::cout << "Claiming interface... " << std::endl;
+                int result = libusb_claim_interface(CelHandle, 0);
+                if (result < 0)
+                {
+                    std::cout << "Error claiming interface " << libusb_error_name(result) << std::endl;
+                    return -1;
+                }
+                return 1;
+            }
+            
             result = AccesoryProtocol(handle);
             if (result > 0)
             {
                 result = libusb_control_transfer(handle, 0x40, 53, 0, 0, NULL, 0, 0);
                 if (result < 0)
                 {
-                    std::cout << "Error: " << result << std::endl;
-                    if (result == LIBUSB_ERROR_NOT_SUPPORTED){
-                        std::cout << "This device cannot control transfer" << std::endl;
-                    }
+                    std::cout << "Error changing to acessory mode: " << libusb_error_name(result) << std::endl;
                     continue;
                 }
                 fprintf(stdout, "Accessory Identification received\n");
-                int global_tries = RECONNECT_TRIES;
-                while (global_tries-- >= 0){
-                        std::cout << "Trying to open in accesory mode..." << std::endl;
-                        CelHandle = libusb_open_device_with_vid_pid(NULL, CelularDesc.idVendor, CelularDesc.idProduct);
-                        if (CelHandle != NULL){
-                            libusb_close(handle);
-                            std::cout << "Success" << std::endl;
-                            return 1;
-                        }
-                    Sleep(5000);
+                libusb_device_descriptor dev;
+                std::cout << "PID: " << CelularDesc.idProduct << " VID: " << CelularDesc.idVendor << std::endl;
+                if (ObtainAccesory() < 0){
+                    std::cout << "Error obtaining accesory " << std::endl;
+                    return -1;
                 }
+                std::cout << "Claiming interface... " << std::endl;
+                int result = libusb_claim_interface(CelHandle, 0);
+                if (result < 0)
+                {
+                    std::cout << "Error claiming interface " << libusb_error_name(result) << std::endl;
+                    return -1;
+                }
+                return 1;
             }
-            else{
+            else
+            {
                 std::cout << "This device does not support Accesory Mode" << std::endl;
             }
         }
@@ -200,6 +251,7 @@ uint8_t GetDeviceEndPoint(libusb_device_handle *handle)
     for (int i = 0; i < desc->bNumInterfaces; i++)
     {
         libusb_interface interface = interfaces[i];
+        std::cout << interface.num_altsetting << std::endl;
         const libusb_interface_descriptor *AltDescriptor = interface.altsetting;
         for (int j = 0; j < interface.num_altsetting; j++)
         {
@@ -209,6 +261,7 @@ uint8_t GetDeviceEndPoint(libusb_device_handle *handle)
                 uint8_t TransferType = 0x03 & endpoints[e].bEndpointAddress;
                 if (TransferType == LIBUSB_TRANSFER_TYPE_BULK)
                 {
+                    InterfaceNum = j;
                     return endpoints[e].bEndpointAddress;
                 }
             }
@@ -216,7 +269,6 @@ uint8_t GetDeviceEndPoint(libusb_device_handle *handle)
     }
     return 0;
 }
-
 
 int SendCaptureToUSB()
 {
@@ -229,14 +281,16 @@ int SendCaptureToUSB()
         int r = libusb_bulk_transfer(CelHandle, endpoint, buf.data(), buf.size(), &endsize, 0);
         if (r < 0)
         {
-            std::cout << "Transfer error " << r << std::endl;
+            std::cout << "Transfer error " << libusb_error_name(r) << std::endl;
             return -1;
         }
-
+        system("PAUSE");
         std::cout << "BYTES: " << endsize << std::endl;
         return 1;
     }
-    else{
+    else
+    {
+        std::cout << "Couldnt find an endpoint" << std::endl;
         return -1;
     }
 }
@@ -257,11 +311,12 @@ int main()
         else
         {
             std::cout << "sending" << std::endl;
-             if (SendCaptureToUSB() < 0){
-                
+            if (SendCaptureToUSB() < 0)
+            {
+
                 libusb_close(CelHandle);
                 CelHandle = NULL;
-             }
+            }
         }
     }
 
