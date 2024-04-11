@@ -3,6 +3,7 @@
 #include <opencv2/opencv.hpp>
 #include "libusb.h"
 
+#define INTEFACE 0
 #define RECONNECT_TRIES 5
 
 libusb_context *contexto = NULL;
@@ -33,7 +34,6 @@ std::vector<uchar> CaptureScreen()
     int Width = GetSystemMetrics(SM_CXSCREEN);
     int Height = GetSystemMetrics(SM_CYSCREEN);
     HBITMAP Bitmap = CreateCompatibleBitmap(Window, Width, Height);
-
     BITMAPINFOHEADER bi;
     bi.biSize = sizeof(BITMAPINFOHEADER);
     bi.biWidth = Width;
@@ -51,12 +51,11 @@ std::vector<uchar> CaptureScreen()
 
     SelectObject(Chwnd, Bitmap);
 
-    StretchBlt(Chwnd, 0, 0, Width, Height, Window, XScreen, YScreen, Width, Height, SRCCOPY); // change SRCCOPY to NOTSRCCOPY for wacky colors !
+    StretchBlt(Chwnd, 0, 0, Width, Height, Window, XScreen, YScreen, Width, Height, SRCCOPY); 
     GetDIBits(Chwnd, Bitmap, 0, Height, img.data, (BITMAPINFO *)&bi, DIB_RGB_COLORS);
     DeleteObject(Bitmap);
     DeleteDC(Chwnd);
     ReleaseDC(hWnd, Window);
-
     std::vector<uchar> buf;
     cv::imencode(".png", img, buf);
     return buf;
@@ -148,21 +147,25 @@ int8_t ObtainAccesory()
         {
             std::cout << "Retrying opening accesory USB" << std::endl;
             CelHandle = libusb_open_device_with_vid_pid(NULL, 0x18d1, 0x2d00);
-            if (CelHandle == NULL){
+            if (CelHandle == NULL)
+            {
                 std::cout << "Retrying opening accesory USB" << std::endl;
             }
-            else{
+            else
+            {
                 std::cout << "Accesory opened 0x2d00" << std::endl;
                 return 1;
             }
         }
-        else{
+        else
+        {
             std::cout << "Accesory opened 0x2d01" << std::endl;
             return 1;
         }
         Sleep(3000);
     }
-    if (CelHandle == NULL){
+    if (CelHandle == NULL)
+    {
         return -1;
     }
 }
@@ -184,21 +187,24 @@ int8_t ObtainNewUSB()
                 std::cout << "Failed to open device " << libusb_error_name(result) << std::endl;
                 continue;
             }
-            libusb_set_configuration(handle, 0);
-            if (libusb_kernel_driver_active(handle, 0))
+            libusb_set_configuration(handle, INTEFACE);
+            if (libusb_kernel_driver_active(handle, INTEFACE))
             {
-                libusb_set_auto_detach_kernel_driver(handle, 0);
+                libusb_set_auto_detach_kernel_driver(handle, INTEFACE);
             }
-
-            if (CelularDesc.idVendor == 0x18D1 && CelularDesc.idProduct == 0x2D01 || CelularDesc.idVendor == 0x18d1 && CelularDesc.idProduct == 0x2D00)
+            result = AccesoryProtocol(handle);
+            if ((CelularDesc.idVendor == 0x18D1 && CelularDesc.idProduct == 0x2D01 || CelularDesc.idVendor == 0x18d1 && CelularDesc.idProduct == 0x2D00 && !result < 0))
             {
-                std::cout << std::endl << "ACCESORY DEVICE FOUND" << std::endl << std::endl;
-                if (ObtainAccesory() < 0){
+                std::cout << std::endl
+                          << "ACCESORY DEVICE FOUND" << std::endl
+                          << std::endl;
+                if (ObtainAccesory() < 0)
+                {
                     std::cout << "Error obtaining accesory " << std::endl;
                     return -1;
                 }
                 std::cout << "Claiming interface... " << std::endl;
-                int result = libusb_claim_interface(CelHandle, 0);
+                result = libusb_claim_interface(CelHandle, INTEFACE);
                 if (result < 0)
                 {
                     std::cout << "Error claiming interface " << libusb_error_name(result) << std::endl;
@@ -206,8 +212,7 @@ int8_t ObtainNewUSB()
                 }
                 return 1;
             }
-            
-            result = AccesoryProtocol(handle);
+
             if (result > 0)
             {
                 result = libusb_control_transfer(handle, 0x40, 53, 0, 0, NULL, 0, 0);
@@ -219,12 +224,13 @@ int8_t ObtainNewUSB()
                 fprintf(stdout, "Accessory Identification received\n");
                 libusb_device_descriptor dev;
                 std::cout << "PID: " << CelularDesc.idProduct << " VID: " << CelularDesc.idVendor << std::endl;
-                if (ObtainAccesory() < 0){
+                if (ObtainAccesory() < 0)
+                {
                     std::cout << "Error obtaining accesory " << std::endl;
                     return -1;
                 }
                 std::cout << "Claiming interface... " << std::endl;
-                int result = libusb_claim_interface(CelHandle, 0);
+                int result = libusb_claim_interface(CelHandle, INTEFACE);
                 if (result < 0)
                 {
                     std::cout << "Error claiming interface " << libusb_error_name(result) << std::endl;
@@ -262,6 +268,7 @@ uint8_t GetDeviceEndPoint(libusb_device_handle *handle)
                 if (TransferType == LIBUSB_TRANSFER_TYPE_BULK)
                 {
                     InterfaceNum = j;
+                    std::cout << "Endopoint found " << endpoints[e].bEndpointAddress << std::endl;
                     return endpoints[e].bEndpointAddress;
                 }
             }
@@ -272,19 +279,32 @@ uint8_t GetDeviceEndPoint(libusb_device_handle *handle)
 
 int SendCaptureToUSB()
 {
+    libusb_set_configuration(CelHandle, INTEFACE);
+    if (libusb_kernel_driver_active(CelHandle, INTEFACE))
+    {
+        libusb_set_auto_detach_kernel_driver(CelHandle, INTEFACE);
+    }
     int endsize;
     uint8_t endpoint = GetDeviceEndPoint(CelHandle);
     if (endpoint != 0)
     {
         std::vector<uchar> buf = CaptureScreen();
-        std::cout << (int)buf.data() << std::endl;
-        int r = libusb_bulk_transfer(CelHandle, endpoint, buf.data(), buf.size(), &endsize, 0);
+        unsigned char temp[8];
+        size_t tempsiz = buf.size();
+        std::memcpy(temp,&tempsiz,8);
+        std::cout << temp << "/" << sizeof(buf.size()) << std::endl;
+        int r = libusb_bulk_transfer(CelHandle, endpoint, temp, sizeof(buf.size()), &endsize, 0);
         if (r < 0)
         {
-            std::cout << "Transfer error " << libusb_error_name(r) << std::endl;
+            std::cout << "Transfer error (Size) " << libusb_error_name(r) << std::endl;
             return -1;
         }
-        system("PAUSE");
+        r = libusb_bulk_transfer(CelHandle, endpoint, buf.data(), buf.size(), &endsize, 0);
+        if (r < 0)
+        {
+            std::cout << "Transfer error (Transfer) " << libusb_error_name(r) << std::endl;
+            return -1;
+        }
         std::cout << "BYTES: " << endsize << std::endl;
         return 1;
     }
@@ -310,12 +330,8 @@ int main()
         }
         else
         {
-            std::cout << "sending" << std::endl;
             if (SendCaptureToUSB() < 0)
             {
-
-                libusb_close(CelHandle);
-                CelHandle = NULL;
             }
         }
     }
