@@ -291,13 +291,13 @@ int SendCaptureToUSB()
         std::vector<uchar> buf = CaptureScreen();
         unsigned char tempsiz[4];
         int h = (int)buf.size();
-        std::memcpy(tempsiz,&h,4);
-        int r = libusb_bulk_transfer(CelHandle, endpoint, (unsigned char*)tempsiz, 4, &endsize, 0);
-        std::cout << tempsiz << "/" << (int)buf.size() <<"/"<<endsize << std::endl;
+        std::memcpy(tempsiz, &h, 4);
+        int r = libusb_bulk_transfer(CelHandle, endpoint, (unsigned char *)tempsiz, 4, &endsize, 0);
+        std::cout << tempsiz << "/" << (int)buf.size() << "/" << endsize << std::endl;
         if (r < 0)
         {
             std::cout << "Transfer error (Size) " << libusb_error_name(r) << std::endl;
-            return -1;
+           return -1;
         }
         r = libusb_bulk_transfer(CelHandle, endpoint, buf.data(), buf.size(), &endsize, 0);
         if (r < 0)
