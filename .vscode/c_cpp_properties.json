@@ -4,8 +4,8 @@
             "name": "Win32",
             "includePath": [
                 "${workspaceFolder}/**",
-                "C:/opencv/build/include",
-                "C:/libusb-1.0.27/include"
+                "C:/opencv/build/include/",
+                "C:/libusb-1.0.27/include/"
             ],
             "defines": [
                 "_DEBUG",
