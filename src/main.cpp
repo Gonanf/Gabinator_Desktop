@@ -48,16 +48,14 @@ std::vector<uchar> CaptureScreen()
     bi.biClrImportant = 0;
 
     img.create(Height, Width, CV_8UC4);
-
     SelectObject(Chwnd, Bitmap);
-
     StretchBlt(Chwnd, 0, 0, Width, Height, Window, XScreen, YScreen, Width, Height, SRCCOPY);
     GetDIBits(Chwnd, Bitmap, 0, Height, img.data, (BITMAPINFO *)&bi, DIB_RGB_COLORS);
     DeleteObject(Bitmap);
     DeleteDC(Chwnd);
     ReleaseDC(hWnd, Window);
     std::vector<uchar> buf;
-    cv::imencode(".bmp", img, buf);
+    cv::imencode(".png", img, buf);
     return buf;
 }
 libusb_device_handle *CelHandle;
@@ -289,16 +287,6 @@ int SendCaptureToUSB()
     if (endpoint != 0)
     {
         std::vector<uchar> buf = CaptureScreen();
-        /*unsigned char tempsiz[4];
-        int h = (int)buf.size();
-        std::memcpy(tempsiz, &h, 4);
-        int r = libusb_bulk_transfer(CelHandle, endpoint, (unsigned char *)tempsiz, 4, &endsize, 0);
-        std::cout << tempsiz << "/" << (int)buf.size() << "/" << endsize << std::endl;
-        if (r < 0)
-        {
-            std::cout << "Transfer error (Size) " << libusb_error_name(r) << std::endl;
-            return -1;
-        }*/
         int r = libusb_bulk_transfer(CelHandle, endpoint, buf.data(), buf.size(), &endsize, 0);
         if (r < 0)
         {
@@ -316,8 +304,7 @@ int SendCaptureToUSB()
 }
 
 int main()
-{
-
+{   
     result = libusb_init(&contexto);
     assert(result == 0);
 
