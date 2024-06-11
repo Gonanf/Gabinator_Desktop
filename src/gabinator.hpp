@@ -1,8 +1,182 @@
-#include <iostream>
-#include "packeter.hpp"
-#include "libusb.h"
-#include "debug.hpp"
 #pragma once
+#define WIN32_LEAN_AND_MEAN
+#include <WinSock2.h>
+#include <WS2tcpip.h>
+#pragma comment(lib, "Ws2_32.lib")
+#include <iostream>
+#include <vector>
+#include <windows.h>
+#include <opencv2/opencv.hpp>
+#include <string>
+#include <fstream>
+#include "libusb.h"
+
+
+#define DEBUG true
+
+#if DEBUG
+#define dMessage(val) std::cout << val << std::endl
+#define start libusb_set_debug(NULL, 3)
+#define PAUSE std::cin.get()
+#else
+#define dMessage(val)
+#define start
+#define PAUSE
+#endif
+
+#define errMessage(val) std::cerr << "ERROR MESSAGE: " << val << std::endl
+
+class Settings
+{
+private:
+    std::fstream file;
+
+    bool compare_caracters(char character, char *array)
+    {
+        bool included = false;
+        for (int i = 0; i < sizeof(array); i++)
+        {
+            if (character == array[i])
+                included = true;
+        }
+        return included;
+    }
+
+    bool compare_with_exeptions(std::string text, const char *comparator, int rest)
+    {
+        char exeptions[] = {' ', '\r', '\n', '/'};
+        std::string filtered_text;
+        for (int i = 0; i < text.size(); i++)
+        {
+            if (compare_caracters(text[i], exeptions) == false)
+                filtered_text += text[i];
+            if (text[i] == '\0')
+                break;
+        }
+        return strcmp(filtered_text.c_str(), comparator) == rest;
+    }
+
+public:
+    char method[4] = {"USB"};
+    int compression = 7;
+
+    Settings()
+    {
+        file.open("settings.txt", std::fstream::in | std::fstream::out | std::fstream::app);
+        std::string line;
+        if (file.is_open())
+        {
+            bool has_method = false;
+            bool has_compression = false;
+            while (std::getline(file, line))
+            {
+                if (line[0] == '/')
+                    continue;
+                if (compare_with_exeptions(line, "Metodo:USB", 0))
+                {
+                    dMessage("USB");
+                    std::strcpy(method, "USB");
+                    has_method = true;
+                }
+                if (compare_with_exeptions(line, "Metodo:TCP", 9))
+                {
+                    dMessage("TCP");
+                    std::strcpy(method, "TCP");
+                    has_method = true;
+                }
+                if (compare_with_exeptions(line, "Compresion:", 1))
+                {
+                    dMessage("Compression");
+                    compression = line[11] - '0';
+                    has_compression = true;
+                }
+            }
+            file.close();
+            file.open("settings.txt", std::fstream::app);
+
+            if (!has_method)
+            {
+                file << "Metodo:USB\n";
+            }
+            if (!has_compression)
+            {
+                file << "Compresion:7\n";
+            }
+            file.close();
+        }
+    }
+};
+
+std::vector<uchar> CaptureScreen(int compression)
+{
+    cv::Mat img;
+    HWND hWnd = GetDesktopWindow();
+    HDC Window = GetDC(hWnd);
+    HDC Chwnd = CreateCompatibleDC(Window);
+    SetStretchBltMode(Chwnd, COLORONCOLOR);
+
+    int Scale = 1;
+    int XScreen = GetSystemMetrics(SM_XVIRTUALSCREEN);
+    int YScreen = GetSystemMetrics(SM_YVIRTUALSCREEN);
+    int Width = GetSystemMetrics(SM_CXSCREEN);
+    int Height = GetSystemMetrics(SM_CYSCREEN);
+
+    HBITMAP Bitmap = CreateCompatibleBitmap(Window, Width, Height);
+    BITMAPINFOHEADER bi;
+    bi.biSize = sizeof(BITMAPINFOHEADER);
+    bi.biWidth = Width;
+    bi.biHeight = -Height;
+    bi.biPlanes = 1;
+    bi.biBitCount = 32;
+    bi.biCompression = BI_RGB;
+    bi.biSizeImage = 0;
+    bi.biXPelsPerMeter = 0;
+    bi.biYPelsPerMeter = 0;
+    bi.biClrUsed = 0;
+    bi.biClrImportant = 0;
+
+    img.create(Height, Width, CV_8UC4);
+    SelectObject(Chwnd, Bitmap);
+    StretchBlt(Chwnd, 0, 0, Width, Height, Window, XScreen, YScreen, Width, Height, SRCCOPY);
+    HICON hicon;
+    CURSORINFO ci;
+    ICONINFO icninf;
+    ci.cbSize = sizeof(ci);
+    GetCursorInfo(&ci);
+    hicon = CopyIcon(ci.hCursor);
+    GetIconInfo(hicon, &icninf);
+    DrawIcon(Chwnd, ci.ptScreenPos.x - (int)icninf.xHotspot, ci.ptScreenPos.y - (int)icninf.yHotspot, hicon);
+
+    GetDIBits(Chwnd, Bitmap, 0, Height, img.data, (BITMAPINFO *)&bi, DIB_RGB_COLORS);
+
+    DeleteObject(Bitmap);
+    DeleteDC(Chwnd);
+    ReleaseDC(hWnd, Window);
+    std::vector<uchar> buf;
+    std::vector<int> params;
+    params.push_back(cv::IMWRITE_JPEG_QUALITY);
+    params.push_back(compression*10);
+    cv::imencode(".jpg", img, buf,params);
+    return buf;
+}
+
+void AddHeader(std::vector<uchar> &vector, size_t size, bool reverse)
+{
+    unsigned char bytes[sizeof(size)];
+    memcpy(bytes, &size, sizeof(size));
+    dMessage(bytes);
+    for (int i = 0; i < sizeof(size); i++)
+    {
+        if (reverse)
+        {
+            vector.insert(vector.end() + i, bytes[i]);
+        }
+        else
+        {
+            vector.insert(vector.begin() + i, bytes[i]);
+        }
+    }
+}
 
 #define INTERFACE_T 0
 #define RECONNECT_TRIES 5
@@ -165,11 +339,10 @@ private:
     }
 
     // Limpieza y to eso
-    
 
 public:
     // Enviar datos de imagen a travez de uSB
-    int SendCaptureToUSB()
+    int SendCaptureToUSB(int compression)
     {
         int endsize;
         if (endpoint == 0)
@@ -184,7 +357,7 @@ public:
             }
             return fixed ? 1 : -1;
         }
-        std::vector<uchar> image_data = CaptureScreen();
+        std::vector<uchar> image_data = CaptureScreen(compression);
         dMessage(image_data.size());
         int r = libusb_bulk_transfer(CelHandle, endpoint, image_data.data(), image_data.size(), &endsize, 0);
         if (r < 0)
@@ -199,18 +372,24 @@ public:
     // AOA (Android Accesory Protocol)
     int8_t ObtainNewUSB()
     {
-        cant = libusb_get_device_list(NULL, &dispositivos);
+        cant = libusb_get_device_list(0, &dispositivos);
         if (cant < 0)
             goto error;
         for (int i = 0; i < cant; i++)
         {
-            libusb_get_device_descriptor(dispositivos[i], &CelularDesc);
+            if (libusb_get_device_descriptor(dispositivos[i], &CelularDesc) < 0)
+            {
+                dMessage(libusb_error_name(result));
+                continue;
+            }
             Celular = dispositivos[i];
             libusb_device_handle *handle;
+            dMessage("\nDEVICE\n");
             dMessage(CelularDesc.idProduct);
             int result = libusb_open(Celular, &handle);
             if (result < 0)
             {
+                dMessage("No se pudo abrir:");
                 dMessage(libusb_error_name(result));
                 continue;
             }
@@ -264,8 +443,8 @@ public:
             }
             goto good;
         }
-    libusb_free_device_list(dispositivos, 1);
-    return 1;
+        libusb_free_device_list(dispositivos, 1);
+        return 0;
 
     good:
         libusb_free_device_list(dispositivos, 1);
@@ -286,14 +465,14 @@ public:
         return -1;
     }
 
-    bool HasDevice(){
+    bool HasDevice()
+    {
         return CelHandle != NULL ? true : false;
     }
 
     ~USB()
     {
         dMessage("Closing USB Protocol");
-        PAUSE;
         libusb_free_device_list(dispositivos, 1);
         libusb_release_interface(CelHandle, INTERFACE_T);
         libusb_attach_kernel_driver(CelHandle, INTERFACE_T);
@@ -302,13 +481,19 @@ public:
         libusb_exit(contexto);
     }
 
-    //Inicio de Libusb
-    USB(){
+    // Inicio de Libusb
+    USB()
+    {
         dMessage("Starting USB Protocol");
-        PAUSE;
         result = libusb_init(&contexto);
         if (result != 0)
             errMessage(libusb_error_name(result));
         start;
     }
+};
+
+//TODO: Terminar esto
+class TCP{
+    private:
+    public:
 };

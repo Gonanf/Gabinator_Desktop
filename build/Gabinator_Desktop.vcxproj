@@ -318,6 +318,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="C:\Users\gabys\OneDrive\Desktop\Programacion\Gabinator_Desktop\src\main.cpp" />
+    <ClInclude Include="C:\Users\gabys\OneDrive\Desktop\Programacion\Gabinator_Desktop\src\gabinator.hpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="C:\Users\gabys\OneDrive\Desktop\Programacion\Gabinator_Desktop\build\ZERO_CHECK.vcxproj">

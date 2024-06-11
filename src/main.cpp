@@ -1,15 +1,13 @@
 #define WIN32_LEAN_AND_MEAN
 #include <iostream>
-#include <opencv2/opencv.hpp>
-#include <windows.h>
-#include "debug.hpp"
-#include "USB_Protocol.hpp"
-#pragma once
+#include <vector>
+#include "gabinator.hpp"
+
 
 int main()
 {
     USB protocolo;
-
+    Settings config;
     while (true)
     {
         if (protocolo.HasDevice() == false)
@@ -20,9 +18,8 @@ int main()
         else
         {
             std::cout << "Sending Images" << std::endl;
-            protocolo.SendCaptureToUSB();
+            protocolo.SendCaptureToUSB(config.compression);
         }
     }
-
     std::cin.get();
 }

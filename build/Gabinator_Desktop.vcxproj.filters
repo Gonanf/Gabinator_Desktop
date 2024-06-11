@@ -6,9 +6,17 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="C:\Users\gabys\OneDrive\Desktop\Programacion\Gabinator_Desktop\src\gabinator.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
     <CustomBuild Include="C:\Users\gabys\OneDrive\Desktop\Programacion\Gabinator_Desktop\CMakeLists.txt" />
   </ItemGroup>
   <ItemGroup>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{20FDB625-0086-38BD-854D-D319076B8C5B}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Source Files">
       <UniqueIdentifier>{C7D9AEA5-FA5B-3BBD-B311-46568A8F802B}</UniqueIdentifier>
     </Filter>
